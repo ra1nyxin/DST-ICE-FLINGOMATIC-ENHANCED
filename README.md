@@ -11,6 +11,7 @@
 - 已修正一次“手持摆放预览圈变大，但落地后显示圈和实际范围还是原版”的问题，现在部署后的显示和实际生效范围会保持一致。
 - 已修正一次增强范围边缘目标虽然进入检测区，但雪球飞行速度仍偏原版，导致最外侧目标灭不到的问题。
 - 已继续校准一次显示圈和真实灭火半径之间的偏差，让实际覆盖更贴近当前显示圈。
+- 当前版本又进一步把真实灭火半径明显加大了一档，允许实际灭火范围超过显示圈，优先保证大型基地边缘也能被灭到。
 - 当前版本没有做外部配置文件开关。
 - 如果后面想继续调整范围，改 `modmain.lua` 里的 `INDICATOR_RANGE` 和 `LIVE_RANGE` 就行；前者控制显示圈，后者控制真实生效半径。
 
@@ -25,5 +26,6 @@ Notes:
 - A previous mismatch where the placement preview was larger but the deployed machine still showed and behaved like vanilla range has been fixed.
 - A previous issue where outer-edge targets entered the enhanced radius but snowballs still used an effectively vanilla travel-speed limit has been fixed.
 - The live extinguish radius has also been recalibrated again so it lines up more closely with the current visual indicator.
+- This version also raises the live extinguish radius by another clear step, intentionally allowing actual coverage to extend beyond the visual ring for better edge protection.
 - There are no external configuration options in this version.
 - If you want to retune the range later, change `INDICATOR_RANGE` and `LIVE_RANGE` in `modmain.lua`; the first controls the visual ring and the second controls the live radius.
