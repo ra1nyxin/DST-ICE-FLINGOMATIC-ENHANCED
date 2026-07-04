@@ -1,0 +1,25 @@
+DST-ICE-FLINGOMATIC-ENHANCED
+
+Expands Ice Flingomatic coverage so it can protect a larger base area.
+
+中文
+
+当前功能：
+- 雪球发射器的范围从原版 `15` 提升到 `20`。
+- 更大的范围会同时覆盖探火、灭火、警报和紧急模式。
+- 更适合保护面积更大的基地。
+
+补充说明：
+- 目前只改雪球发射器范围，不改别的机制。
+- 当前版本没有做外部配置文件开关。
+
+English
+
+Current features:
+- Ice Flingomatic range is increased from the vanilla `15` to `20`.
+- The larger radius also applies to fire detection, extinguishing, warning coverage, and emergency mode.
+- Better suited for protecting larger bases.
+
+Notes:
+- This mod currently changes only Ice Flingomatic range.
+- There are no external configuration options in this version.
