@@ -14,6 +14,7 @@ Expands Ice Flingomatic coverage so it can protect a larger base area.
 - 目前会改范围和单次灭火时的雪球密度，但不会额外增加燃料消耗。
 - 已修正一次手持摆放预览和落地后实际范围不一致的问题。
 - 已修正一次增强范围最外侧目标偶尔灭不到的问题。
+- 已继续校准一次显示圈和真实灭火半径之间的偏差，让实际灭火覆盖更贴近当前显示圈。
 - 当前版本没有做外部配置文件开关。
 
 English
@@ -28,4 +29,5 @@ Notes:
 - This mod now changes range and per-trigger snowball density, without extra fuel cost.
 - A previous mismatch between the placement preview and the deployed live range has been fixed.
 - A previous issue affecting extinguish reliability at the outer edge of the enhanced radius has also been fixed.
+- The live extinguish radius has also been recalibrated again so actual coverage tracks the current visual indicator more closely.
 - There are no external configuration options in this version.

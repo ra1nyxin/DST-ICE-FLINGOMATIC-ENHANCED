@@ -1,17 +1,18 @@
 local _G = GLOBAL
 
-local ENHANCED_RANGE = 20
+local INDICATOR_RANGE = 20
+local LIVE_RANGE = 24
 local EXTRA_SNOWBALLS = 3
 local EXTRA_SHOT_INTERVAL = 3 * _G.FRAMES
 local VANILLA_RANGE = _G.TUNING.FIRE_DETECTOR_RANGE or 15
 local VANILLA_PLACER_SCALE = 1.55
-local ENHANCED_PLACER_SCALE = VANILLA_PLACER_SCALE * (ENHANCED_RANGE / VANILLA_RANGE)
+local ENHANCED_PLACER_SCALE = VANILLA_PLACER_SCALE * (INDICATOR_RANGE / VANILLA_RANGE)
 
-_G.TUNING.FIRE_DETECTOR_RANGE = ENHANCED_RANGE
+_G.TUNING.FIRE_DETECTOR_RANGE = LIVE_RANGE
 
 local function ApplyEnhancedRange(inst)
     if inst ~= nil and inst.components.firedetector ~= nil then
-        inst.components.firedetector.range = ENHANCED_RANGE
+        inst.components.firedetector.range = LIVE_RANGE
     end
 end
 
@@ -70,7 +71,7 @@ end)
 
 AddComponentPostInit("firedetector", function(self)
     if self ~= nil and self.inst ~= nil and self.inst.prefab == "firesuppressor" then
-        self.range = ENHANCED_RANGE
+        self.range = LIVE_RANGE
     end
 end)
 

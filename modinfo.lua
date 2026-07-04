@@ -4,11 +4,11 @@ Expands the Ice Flingomatic coverage area so it can protect a larger base more r
 
 Current features:
 - Ice Flingomatic range is increased from 15 to 20.
-- Fire detection, emergency response, and extinguishing all use the larger coverage radius.
+- Fire detection, emergency response, and extinguishing are recalibrated to better match the enlarged coverage indicator.
 - Each extinguish trigger now fires a short 4-shot burst without extra fuel cost.
 ]]
 author = "ra1nyxin"
-version = "0.1.3"
+version = "0.1.4"
 
 forumthread = ""
 api_version = 10
