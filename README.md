@@ -7,6 +7,7 @@
 
 说明：
 - 这个模组只改雪球发射器的范围，不改燃料消耗、灭火频率、温度处理或其他数值。
+- 已修正一次“手持摆放预览圈变大，但落地后显示圈和实际范围还是原版”的问题，现在部署后的显示和实际生效范围会保持一致。
 - 当前版本没有做外部配置文件开关。
 - 如果后面想继续扩大范围，直接改 `modmain.lua` 里的 `ENHANCED_RANGE` 就行。
 
@@ -17,5 +18,6 @@ Current features:
 
 Notes:
 - This mod changes only Ice Flingomatic range and does not alter fuel drain, firing cadence, cooling values, or other balance data.
+- A previous mismatch where the placement preview was larger but the deployed machine still showed and behaved like vanilla range has been fixed.
 - There are no external configuration options in this version.
 - If you want an even larger radius later, you only need to change `ENHANCED_RANGE` in `modmain.lua`.

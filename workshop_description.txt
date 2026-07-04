@@ -11,6 +11,7 @@ Expands Ice Flingomatic coverage so it can protect a larger base area.
 
 补充说明：
 - 目前只改雪球发射器范围，不改别的机制。
+- 已修正一次手持摆放预览和落地后实际范围不一致的问题。
 - 当前版本没有做外部配置文件开关。
 
 English
@@ -22,4 +23,5 @@ Current features:
 
 Notes:
 - This mod currently changes only Ice Flingomatic range.
+- A previous mismatch between the placement preview and the deployed live range has been fixed.
 - There are no external configuration options in this version.

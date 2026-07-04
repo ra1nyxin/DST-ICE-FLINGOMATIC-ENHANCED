@@ -8,7 +8,7 @@ Current features:
 - This mod stays focused on a simple range upgrade with no extra balance changes.
 ]]
 author = "ra1nyxin"
-version = "0.1.0"
+version = "0.1.1"
 
 forumthread = ""
 api_version = 10
