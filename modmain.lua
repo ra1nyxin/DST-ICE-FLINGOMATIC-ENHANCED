@@ -1,7 +1,8 @@
 local _G = GLOBAL
-local easing = require("easing")
 
 local ENHANCED_RANGE = 20
+local EXTRA_SNOWBALLS = 3
+local EXTRA_SHOT_INTERVAL = 3 * _G.FRAMES
 local VANILLA_RANGE = _G.TUNING.FIRE_DETECTOR_RANGE or 15
 local VANILLA_PLACER_SCALE = 1.55
 local ENHANCED_PLACER_SCALE = VANILLA_PLACER_SCALE * (ENHANCED_RANGE / VANILLA_RANGE)
@@ -14,19 +15,29 @@ local function ApplyEnhancedRange(inst)
     end
 end
 
-local function LaunchProjectileEnhanced(inst, targetpos)
+local function SpawnEnhancedSnowball(inst, targetx, targety, targetz)
     local x, y, z = inst.Transform:GetWorldPosition()
     local projectile = _G.SpawnPrefab("snowball")
     projectile.Transform:SetPosition(x, y, z)
 
-    local dx = targetpos.x - x
-    local dz = targetpos.z - z
-    local rangesq = dx * dx + dz * dz
-    local speed = easing.linear(rangesq, 15, 3, ENHANCED_RANGE * ENHANCED_RANGE)
-
-    projectile.components.complexprojectile:SetHorizontalSpeed(speed)
+    local dx = targetx - x
+    local dz = targetz - z
     projectile.components.complexprojectile:SetGravity(-25)
-    projectile.components.complexprojectile:Launch(targetpos, inst, inst)
+    projectile.components.complexprojectile:SetHorizontalSpeedForDistance(math.sqrt(dx * dx + dz * dz), 18)
+    projectile.components.complexprojectile:Launch(_G.Vector3(targetx, targety, targetz), inst, inst)
+end
+
+local function LaunchProjectileEnhanced(inst, targetpos)
+    local targetx, targety, targetz = targetpos:Get()
+    SpawnEnhancedSnowball(inst, targetx, targety, targetz)
+
+    for i = 1, EXTRA_SNOWBALLS do
+        inst:DoTaskInTime(EXTRA_SHOT_INTERVAL * i, function()
+            if inst ~= nil and inst:IsValid() then
+                SpawnEnhancedSnowball(inst, targetx, targety, targetz)
+            end
+        end)
+    end
 end
 
 local function ApplyHelperScale(inst)
